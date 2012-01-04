@@ -1,7 +1,4 @@
-function isBasic(word) {
-	return (basicWords.indexOf(word.toLowerCase()) != -1)	// Should replace the Array with an Object to get O(1) lookups instead of O(n)
-}
-
+afterDelay.add(spellCheck);
 function spellCheck() {
 	var raw = $('#editor').text().split(' ');
 	$('#editor').html($.map(raw, function(w, i) {
@@ -13,6 +10,10 @@ function spellCheck() {
 			return w.replace(word, '<span class="bad">'+word+'</span>');
 		}
 	}).join(' '));
+}
+
+function isBasic(word) {
+	return (basicWords.indexOf(word.toLowerCase()) != -1)	// Should replace the Array with an Object to get O(1) lookups instead of O(n)
 }
 
 basicWords = [
