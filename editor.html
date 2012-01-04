@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Basic English editor</title>
+		
+		<script src="../jquery.js"></script>
+		<script src="editor.js"></script>
+		
+		<style>
+			body { font-family: sans-serif; }
+			
+			p { font-size: 60%; }
+			
+			#editor {
+				min-height: 20em;
+				width: 100%;
+				border: 1px dotted lightgray;
+			}
+			
+			#saved { opacity: 0; color: red; }
+			
+			footer {
+				margin-top: 1in;
+				font-size: 60%;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<header>Basic English editor!</header>
+		
+		<span id="saved">Saved.</span>
+		<div id="editor" contenteditable="true"></div>
+		<button id="clear">Clear</button>
+		
+		<footer>
+			<a href="http://en.wikipedia.org/wiki/Basic_english"><img src="basic_english-badge.png" alt="Learn Basic English" /></a>
+			<a href="http://www.jquery.com"><img src="jquery-badge.png" alt="Powered by jQuery" /></a>
+			<a href="http://github.com/echoback/Basic-English-editor"><img src="github-badge.png" alt="This page's Github repository" /></a>
+			<a href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" alt="This work is Public Domain" /></a>
+		</footer>
+	</body>
+</html>
