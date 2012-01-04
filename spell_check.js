@@ -1,11 +1,11 @@
 function isBasic(word) {
-	return (basicWords.indexOf(word) != -1)	// Should replace the Array with an Object to get O(1) lookups instead of O(n)
+	return (basicWords.indexOf(word.toLowerCase()) != -1)	// Should replace the Array with an Object to get O(1) lookups instead of O(n)
 }
 
 function spellCheck() {
 	var raw = $('#editor').text().split(' ');
 	$('#editor').html($.map(raw, function(w, i) {
-		var word = w.match(/[a-z](-|[a-z])*/i);
+		var word = w.match(/[a-z](?:-|[a-z])*/i)[0];
 		if(isBasic(word)) {
 			return w;
 		}
