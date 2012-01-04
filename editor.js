@@ -14,17 +14,17 @@
 });
 
 function editor_timer() {
-	spellCheck();
-	save();
-}
-
-function save() {
 	var content = $('#editor').html();
 	if(localStorage['content'] != content) {
-		localStorage['content'] = content;
-		
-		var saved = $('#saved');
-		saved.css('opacity', 1);
-		saved.animate({opacity: 0}, 'slow');
+		spellCheck();
+		save(content);
 	}
+}
+
+function save(content) {
+	localStorage['content'] = content;
+	
+	var saved = $('#saved');
+	saved.css('opacity', 1);
+	saved.animate({opacity: 0}, 'slow');
 }
